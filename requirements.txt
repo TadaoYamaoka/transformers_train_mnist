@@ -1,0 +1,5 @@
+jsonargparse[signatures]
+tensorboard
+torch
+torchvision
+transformers[torch]

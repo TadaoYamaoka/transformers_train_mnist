@@ -1,0 +1,32 @@
+data:
+  data_dir: data
+  train_split_ratio: 0.9
+  download: true
+model:
+  dropout: 0.25
+training:
+  output_dir: null
+  num_train_epochs: 5
+  per_device_train_batch_size: 64
+  per_device_eval_batch_size: 128
+  optim: adamw_torch
+  learning_rate: 0.001
+  weight_decay: 0.01
+  lr_scheduler_type: linear
+  warmup_steps: 0
+  report_to:
+    - tensorboard
+  save_strategy: epoch
+  eval_strategy: epoch
+  logging_strategy: steps
+  logging_steps: 50
+  save_total_limit: 3
+  remove_unused_columns: false
+  load_best_model_at_end: false
+  metric_for_best_model: accuracy
+  greater_is_better: true
+  seed: 42
+  data_seed: 42
+  dataloader_num_workers: 2
+  ddp_find_unused_parameters: false
+  disable_tqdm: false
